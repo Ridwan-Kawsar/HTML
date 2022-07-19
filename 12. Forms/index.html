@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Forms</title>
+    </head>
+    
+    <body>
+        <form method="post" action="index.html">
+            <h1>Sign up form</h1>
+            <fieldset>
+                <p><legend><u>Your basic info</u></legend></p>
+                    <br><label for="fname">First Name:*</label>
+                    <input type="text" id="fname" name="user_name" style="width:200px; height:17px;" pattern="[a-z]{2,20}" autofocus="true" required/><br>
+                    <br><label for="email">Email:*</label>
+                    <input type="email" id="email" name="user_email" style="width:234px; height:17px;" pattern="{12,50}" autofocus="true" required/><br>
+                    <br><label for="password">Password:*</label>
+                    <input type="password" id="password" name="user_password" style="width:210px; height:17px;" pattern="{6,30}" autofocus="true" required/><br>
+                    <p><label>Gender:*</label>
+                    <input type="radio" id="male" value="male" name="gender"/>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" value="female" name="gender"/>
+                    <label for="male">Female</label></p>
+            </fieldset>
+            <br><button type="submit">Sign Up!</button>
+        </form>
+    </body>
+</html>
+
+<!--
+Elements:
+**FORM** <form></form> Form Tags - Used to collect user input
+    Two Attributes Inside the Form Tags;
+        action - URL to open/action to execute upon form submission
+        method - How info is passed to the server
+            1. get - adds the arguments to the action URL and opens it 
+            2. post - posts the info to the URL the form points to
+**SELECT** <select size="3" multiple></select> Select tag - Creates a drop-down field
+    **size attribute** - Defines the rows displayed in the drop-down field
+    **multiple attribute** - Allows for multiple selection
+    **selected attribute** - By default, first value in the Drop-down field is selected, the Selected attribute overrides this
+**OPTION** <option></option> Option tag - Creates predefined values
+**DATALIST** <datalist></datalist> Datalist similar to <select> except it lets you type the option into a textbox.
+**FIELDSET** <fieldset></fieldset> Fieldset tags are used to group related form elements (tags) together. e.g. Legend, label, input
+**LEGEND** <legend></legend> Legend tags used to split sections such as user details, address details
+**LABEL** <label></label> Label tag 
+
+Input Types:
+**TEXT** <input type="text" value="Enter your Username"/> Creates a Textbox
+**PASSWORD** <input type="password" /> Creates a Password Text Box (Hides Characters)            
+**DATE** <input type="date" /> Creates a Date textbox with the use of a calendar
+**EMAIL** <input type="email" /> Creates an Email textbox; uses auto syntac verification
+**URL** <input type="url" /> Creates a textbox for URL; uses auto syntac verification
+**RANGE** <input type="range" /> Creates a range slider
+**FILE** <input type="file" /> Creates a "Choose File" button
+**CHECKBOX** <input type="checkbox" /> Creates a Checkbox, allows for multiple selection
+**BUTTON** <input type="button" /> Creates a Button
+**RADIO** <input type="radio" name="abc" /> Creates a Radio button, allows for single selection if placed at the same scope. (Note: Radio buttons must have same name attributes)
+**RESET** <input type="reset" /> Creates a reset button, clears the form to initial state.
+**SUBMIT** <input type="submit" /> Creates a Submit button, sends info in the form to the action attribute of the <form>.
+**TEXTAREA** <textarea rows="1" cols="2"></textarea> TextArea creates a multi-line text input space. Used for feedback, contact form etc. Can be specified by rows and columns
+**NUMBER** <input type="number" min="1" max="100 step="2" /> Creates a Textbox for numbers, step represents the increment/decrement
+**SEARCH** <input type="search"/> Creates a search box. (Note: Max 1 Search field per web page)
+**COLOR** <input type="colour" /> Lets us select a colour from an RGB circle.
+
+Attributes: 
+**name** - Assigns a name to the input type
+**placeholder** - Assigns temporary text in a text box/field which will erase once user starts typing.
+**value** - assigns default info to a textbox/field which can be replaced by user. 
+**pattern** pattern="[0-9]{13,16}" - Used to implement REGEX (regular expression) patterns to a field for validation. e.g. checking debit card number
+    Can be used with the following inputs; text, search, url, tel, email, password
+**autofocus** and **required** Autofocus - moves the cursor focus to a particular field, required - forces a field to be mandatory on the client-side.
+-->
